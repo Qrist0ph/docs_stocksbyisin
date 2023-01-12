@@ -2,7 +2,36 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
+<style>
+  nav ul {
+   display: flex;
+   justify-content: space-between;
+}
 
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
+
+</style>
 {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
@@ -13,6 +42,7 @@
     {% include head-custom.html %}
   </head>
   <body>
+    {% include navigation.html %}
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
@@ -39,3 +69,12 @@
     </main>
   </body>
 </html>
+<script>
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('nav ul');
+
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
+
+</script>
