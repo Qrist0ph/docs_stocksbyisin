@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Privacy  
-permalink: /privacy/
+title: DevTest  
+permalink: /devtest/
 description: This is a description
 ---
 
